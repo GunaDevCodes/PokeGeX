@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PokeGeX — Pokédex</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="logo">PokeGeX</h1>
+      <div class="controls">
+        <input id="searchInput" class="search" placeholder="Search Pokémon by name or dex #" />
+        <select id="perPage" class="select">
+          <option value="20">20 / page</option>
+          <option value="50" selected>50 / page</option>
+          <option value="100">100 / page</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <h2>Pokédex</h2>
+      <div id="listInfo" class="muted"></div>
+      <div id="pokemonGrid" class="grid"></div>
+      <div class="pagination" id="pagination"></div>
+    </section>
+
+    <section class="section ash-section">
+      <h2>Ash's Pokémon & Bonds (sample)</h2>
+      <div id="ashList" class="ash-grid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <div>Data from <a href="https://pokeapi.co" target="_blank" rel="noopener">PokeAPI</a>. PokeGeX demo — not affiliated with Pokémon.</div>
+  </footer>
+
+  <!-- Pokemon detail modal -->
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-card" role="document">
+      <button id="modalClose" class="btn-close" title="Close">✕</button>
+      <div id="modalContent" class="modal-content">
+        <!-- Filled dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
